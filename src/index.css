@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-brand-cyan: #22d3ee; /* cyan-400 */
+  --color-brand-violet: #a78bfa; /* violet-400 */
+  --color-brand-blue: #60a5fa; /* blue-400 */
+}
+
+:root {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased selection:bg-brand-violet/20;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-900;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-3xl border border-slate-200/50 shadow-sm;
+}
+
+.glass-dark {
+  @apply bg-slate-900/90 backdrop-blur-3xl border border-slate-800 text-white;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-violet via-brand-blue to-brand-cyan;
+}
+
+.gradient-btn {
+  @apply bg-gradient-to-r from-violet-600 to-blue-600 text-white;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 3s infinite;
+  transform: skewX(-20deg);
+}
+
