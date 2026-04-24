@@ -49,7 +49,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1 text-slate-900">Global HQ</h4>
-                  <p className="text-slate-600">1006/Tower-6, Royal Court, Nemrana ,Rajasthan</p>
+                  <p className="text-slate-600">1006/Tower-6, Royal Court, Neemrana ,Rajasthan</p>
                 </div>
               </div>
             </div>

@@ -42,18 +42,6 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="mt-12 flex items-center gap-6">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center overflow-hidden shadow-sm">
-                  <img src={`https://i.pravatar.cc/100?u=${i}`} alt="User" />
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-slate-500">
-              <span className="text-slate-900 font-semibold">10k+</span> users already automated
-            </p>
-          </div>
         </motion.div>
 
         <motion.div
