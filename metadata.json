@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "Remix: Nexasphere AI Labs",
+=======
+  "name": "Remix: Remix: Remix: Remix: Remix: Nexasphere AI Labs",
+>>>>>>> e3d7982 (changes made)
   "description": "NexasphereAI Labs - A high-performance, futuristic AI platform for intelligent automation and data analytics.",
   "requestFramePermissions": [],
   "majorCapabilities": []
