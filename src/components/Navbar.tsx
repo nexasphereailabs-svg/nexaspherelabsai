@@ -73,7 +73,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" onClick={() => setActiveSection("home")} className="flex items-center gap-2 cursor-pointer">
-          <div className="w-8 h-8 bg-gradient-to-br from-brand-violet to-brand-cyan rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-linear-to-br from-brand-violet to-brand-cyan rounded-lg flex items-center justify-center">
             <div className="w-4 h-4 bg-white rounded-full" />
           </div>
           <span className="text-xl font-display font-bold tracking-tight text-slate-900">
@@ -104,7 +104,7 @@ export default function Navbar() {
                 {isActive(link.id) && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-violet to-brand-cyan rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-brand-violet to-brand-cyan rounded-full"
                   />
                 )}
               </Link>

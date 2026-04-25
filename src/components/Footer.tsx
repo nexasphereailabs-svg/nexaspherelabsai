@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] text-slate-500 uppercase tracking-widest font-bold">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-brand-violet to-brand-cyan rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-linear-to-br from-brand-violet to-brand-cyan rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-full" />
             </div>
             <span className="text-slate-900">© 2026 Nexasphere AI Labs Inc.</span>

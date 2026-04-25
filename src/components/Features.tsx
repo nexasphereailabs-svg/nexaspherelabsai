@@ -22,7 +22,6 @@ const getBgClass = (color: string) => {
   }
 };
 
-
 export default function Features() {
   return (
     <section id="features" className="py-24 relative overflow-hidden">
@@ -33,11 +32,7 @@ export default function Features() {
             whileInView={{ opacity: 1 }}
             className="text-brand-violet font-bold text-xs tracking-widest uppercase mb-4"
           >
-
-            Capabilities
-
             Services
-
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -49,29 +44,6 @@ export default function Features() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          {features.map((feature, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="group glass p-8 rounded-[32px] hover:shadow-lg transition-all duration-300 relative overflow-hidden"
-            >
-              <div className="relative z-10 text-left">
-                <h3 className="text-xs font-bold text-brand-violet uppercase tracking-widest mb-6">Feature 0{i+1}</h3>
-                <div className={`w-12 h-12 rounded-xl ${feature.iconBg} flex items-center justify-center mb-6`}>
-                  {feature.icon}
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900">{feature.title}</h4>
-                <p className="text-slate-500 text-sm leading-relaxed group-hover:text-slate-700 transition-colors">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
@@ -102,7 +74,6 @@ export default function Features() {
               </Link>
             );
           })}
-
         </div>
       </div>
     </section>

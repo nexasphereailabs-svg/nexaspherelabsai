@@ -1,9 +1,6 @@
 import { motion } from "motion/react";
 import { ChevronRight, Play } from "lucide-react";
-
-
 import { Link } from "react-router-dom";
-
 import Button from "./ui/Button";
 
 export default function Hero() {
@@ -38,20 +35,11 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-wrap gap-4">
-
-            <Button size="lg" className="flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 transition-colors">
-              Try Now <ChevronRight className="w-5 h-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="flex items-center gap-2 border-slate-200 text-slate-900 hover:bg-slate-50 transition-colors">
-              <Play className="w-4 h-4 fill-current" /> Learn More
-            </Button>
-
             <Link to="/learn-more">
               <Button size="lg" className="flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 transition-colors">
                 Learn More  <ChevronRight className="w-5 h-5" />
               </Button>
             </Link>
-
           </div>
 
         </motion.div>

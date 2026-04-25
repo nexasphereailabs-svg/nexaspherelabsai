@@ -95,7 +95,7 @@ export default function About() {
             viewport={{ once: true }}
             className="glass p-10 rounded-[40px] relative overflow-hidden group border-2 border-brand-violet/20 flex flex-col justify-center"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/5 to-brand-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-linear-to-br from-brand-violet/5 to-brand-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
                 <GraduationCap className="text-brand-violet w-8 h-8" />
@@ -124,7 +124,7 @@ export default function About() {
               viewport={{ once: true }}
               className="glass p-8 rounded-[32px] group hover:shadow-2xl hover:shadow-brand-violet/10 hover:border-brand-violet/30 transition-all duration-300 text-center sm:text-left relative overflow-hidden h-full"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-br from-brand-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 mx-auto sm:mx-0 rounded-2xl bg-brand-violet/10 flex items-center justify-center mb-6 text-brand-violet group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                   {value.icon}

@@ -97,7 +97,7 @@ export default function FeatureDetailPage() {
               className="relative rounded-[40px] overflow-hidden shadow-2xl border border-white/20"
             >
               <img src={feature.image} alt={feature.title} className="w-full aspect-video object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 to-transparent" />
             </motion.div>
           </div>
         );
@@ -173,7 +173,7 @@ export default function FeatureDetailPage() {
                 className="lg:col-span-2 relative rounded-[48px] overflow-hidden group"
               >
                 <img src={feature.image} alt={feature.title} className="w-full h-full object-cover min-h-[400px] transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent" />
                 <div className="absolute bottom-10 left-10 text-white max-w-md">
                    <p className="text-xl font-medium leading-relaxed">{feature.heroSubheadline}</p>
                 </div>
@@ -388,7 +388,7 @@ export default function FeatureDetailPage() {
         {/* CTA Section */}
         <section className="container mx-auto px-6">
           <div className="bg-slate-900 rounded-[48px] p-12 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-transparent opacity-50" />
+            <div className="absolute inset-0 bg-linear-to-br from-brand-violet/20 to-transparent opacity-50" />
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
                 Ready to Deploy?
