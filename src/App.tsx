@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-<<<<<<< HEAD
-=======
+
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
->>>>>>> e3d7982 (changes made)
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -15,12 +15,12 @@ import About from "./components/About";
 import HowItWorks from "./components/HowItWorks";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-<<<<<<< HEAD
+
 
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-=======
+
 import FeatureDetailPage from "./components/FeatureDetailPage";
 import LearnMorePage from "./components/LearnMorePage";
 
@@ -45,7 +45,7 @@ function ScrollToTop() {
 function HomePage() {
   return (
     <>
->>>>>>> e3d7982 (changes made)
+
       <Navbar />
       <main>
         <Hero />
@@ -55,9 +55,9 @@ function HomePage() {
         <Contact />
       </main>
       <Footer />
-<<<<<<< HEAD
+
     </div>
-=======
+
     </>
   );
 }
@@ -74,7 +74,7 @@ export default function App() {
         </Routes>
       </div>
     </Router>
->>>>>>> e3d7982 (changes made)
+
   );
 }
 

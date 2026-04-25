@@ -122,7 +122,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
-<<<<<<< HEAD
+
               className="glass p-8 rounded-[32px] group hover:bg-slate-900 transition-all duration-500 text-center sm:text-left"
             >
               <div className="w-12 h-12 mx-auto sm:mx-0 rounded-2xl bg-brand-violet/10 flex items-center justify-center mb-6 text-brand-violet group-hover:bg-brand-violet group-hover:text-white transition-colors">
@@ -130,7 +130,7 @@ export default function About() {
               </div>
               <h4 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-white transition-colors tracking-tight">{value.title}</h4>
               <p className="text-slate-500 text-xs leading-relaxed group-hover:text-slate-400 transition-colors uppercase font-medium tracking-wide">{value.desc}</p>
-=======
+
               className="glass p-8 rounded-[32px] group hover:shadow-2xl hover:shadow-brand-violet/10 hover:border-brand-violet/30 transition-all duration-300 text-center sm:text-left relative overflow-hidden h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -141,7 +141,7 @@ export default function About() {
                 <h4 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-brand-violet transition-colors duration-300 tracking-tight">{value.title}</h4>
                 <p className="text-slate-500 text-xs leading-relaxed group-hover:text-slate-700 transition-colors duration-300 uppercase font-medium tracking-wide">{value.desc}</p>
               </div>
->>>>>>> e3d7982 (changes made)
+
             </motion.div>
           ))}
         </div>

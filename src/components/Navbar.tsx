@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
-<<<<<<< HEAD
-=======
+
+
 import { Link, useLocation } from "react-router-dom";
->>>>>>> e3d7982 (changes made)
+
 import Button from "./ui/Button";
 
 export default function Navbar() {
@@ -12,8 +12,8 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-<<<<<<< HEAD
-=======
+
+
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -24,16 +24,16 @@ export default function Navbar() {
       setActiveSection(location.hash.replace("#", ""));
     }
   }, [location, isHomePage]);
->>>>>>> e3d7982 (changes made)
+
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
     
-<<<<<<< HEAD
-=======
+
+
     if (!isHomePage) return;
 
->>>>>>> e3d7982 (changes made)
+
     if (latest < 100) {
       setActiveSection("home");
       return;
@@ -41,14 +41,14 @@ export default function Navbar() {
     
     // Detect active section
     const sections = ["features", "about", "how-it-works", "contact"];
-<<<<<<< HEAD
+
     const scrollPosition = latest + 150;
 
-=======
+
     const scrollPosition = latest + 200; // Increased offset for better detection
 
     let currentSection = activeSection;
->>>>>>> e3d7982 (changes made)
+
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
@@ -56,16 +56,16 @@ export default function Navbar() {
         const height = element.offsetHeight;
         
         if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-<<<<<<< HEAD
+
           setActiveSection(section);
-=======
+
           currentSection = section;
->>>>>>> e3d7982 (changes made)
+
           break;
         }
       }
     }
-<<<<<<< HEAD
+
   });
 
   const navLinks = [
@@ -75,7 +75,7 @@ export default function Navbar() {
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
-=======
+
     
     if (currentSection !== activeSection) {
       setActiveSection(currentSection);
@@ -94,7 +94,7 @@ export default function Navbar() {
     return activeSection === linkId;
   };
 
->>>>>>> e3d7982 (changes made)
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -102,7 +102,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-<<<<<<< HEAD
+
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -140,7 +140,7 @@ export default function Navbar() {
           <Button variant="secondary" size="sm" className="rounded-full px-5 bg-slate-900 text-white hover:bg-slate-800">
             Get Started
           </Button>
-=======
+
         <Link to="/">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -191,7 +191,7 @@ export default function Navbar() {
               Get Started
             </Button>
           </Link>
->>>>>>> e3d7982 (changes made)
+
         </div>
 
         {/* Mobile Toggle */}
@@ -210,7 +210,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-<<<<<<< HEAD
+
             className="md:hidden glass border-t border-slate-200"
           >
             <div className="flex flex-col p-6 gap-4">
@@ -227,7 +227,7 @@ export default function Navbar() {
               <Button variant="secondary" className="w-full mt-2 rounded-full bg-slate-900 text-white">
                 Get Started
               </Button>
-=======
+
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden glass border-t border-slate-200 overflow-hidden"
           >
@@ -247,7 +247,7 @@ export default function Navbar() {
                   Get Started
                 </Button>
               </Link>
->>>>>>> e3d7982 (changes made)
+
             </div>
           </motion.div>
         )}

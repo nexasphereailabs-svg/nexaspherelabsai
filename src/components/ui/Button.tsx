@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { motion } from "motion/react";
 import { ReactNode } from "react";
 import { cn } from "@/src/lib/utils";
@@ -9,14 +9,14 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   className?: string;
   onClick?: () => void;
-=======
+
 import { motion, HTMLMotionProps } from "motion/react";
 import { cn } from "@/src/lib/utils";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
->>>>>>> e3d7982 (changes made)
+
 }
 
 export default function Button({
@@ -24,11 +24,11 @@ export default function Button({
   variant = "primary",
   size = "md",
   className,
-<<<<<<< HEAD
+
   onClick,
-=======
+
   ...props
->>>>>>> e3d7982 (changes made)
+
 }: ButtonProps) {
   const variants = {
     primary: "gradient-btn shadow-lg shadow-violet-600/20 shimmer",
@@ -48,26 +48,26 @@ export default function Button({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-<<<<<<< HEAD
+
         "rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50",
-=======
+
         "rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 cursor-pointer",
->>>>>>> e3d7982 (changes made)
+
         variants[variant],
         sizes[size],
         className
       )}
-<<<<<<< HEAD
+
       onClick={onClick}
-=======
+
       {...props}
->>>>>>> e3d7982 (changes made)
+
     >
       {children}
     </motion.button>
   );
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> e3d7982 (changes made)
+
+
+

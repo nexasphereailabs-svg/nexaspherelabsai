@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 import { motion } from "motion/react";
 import { Mail, MessageSquare, MapPin, Send } from "lucide-react";
 import Button from "./ui/Button";
 
 export default function Contact() {
-=======
+
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, MessageSquare, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
 import React, { useState } from "react";
@@ -45,7 +45,7 @@ export default function Contact() {
     }
   };
 
->>>>>>> e3d7982 (changes made)
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -92,11 +92,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1 text-slate-900">Global HQ</h4>
-<<<<<<< HEAD
+
                   <p className="text-slate-600">1006/Tower-6, Royal Court, Neemrana ,Rajasthan</p>
-=======
+
                   <p className="text-slate-600">1006/Tower-6, Royal Court, Nemrana ,Rajasthan</p>
->>>>>>> e3d7982 (changes made)
+
                 </div>
               </div>
             </div>
@@ -104,10 +104,10 @@ export default function Contact() {
 
           {/* Form Side */}
           <motion.div
-<<<<<<< HEAD
-=======
+
+
             id="contact-form"
->>>>>>> e3d7982 (changes made)
+
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -115,7 +115,7 @@ export default function Contact() {
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-violet/10 blur-[80px] -z-10" />
             
-<<<<<<< HEAD
+
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -158,7 +158,7 @@ export default function Contact() {
                 Send Message <Send className="w-5 h-5" />
               </Button>
             </form>
-=======
+
             <AnimatePresence mode="wait">
               {isSuccess ? (
                 <motion.div
@@ -252,7 +252,7 @@ export default function Contact() {
                 </motion.form>
               )}
             </AnimatePresence>
->>>>>>> e3d7982 (changes made)
+
           </motion.div>
 
         </div>
@@ -260,7 +260,7 @@ export default function Contact() {
     </section>
   );
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> e3d7982 (changes made)
+
+
+

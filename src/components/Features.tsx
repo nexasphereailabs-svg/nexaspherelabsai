@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-<<<<<<< HEAD
+
 import { 
   Bot, 
   MessagesSquare, 
@@ -68,7 +68,7 @@ const features = [
     description: "High-impact training programs for corporates and universities in AI, ML, and Data Science.",
   },
 ];
-=======
+
 import { Link } from "react-router-dom";
 import { featuresData } from "../constants/featuresData";
 
@@ -91,7 +91,7 @@ const getBgClass = (color: string) => {
     default: return 'bg-brand-violet/20';
   }
 };
->>>>>>> e3d7982 (changes made)
+
 
 export default function Features() {
   return (
@@ -103,11 +103,11 @@ export default function Features() {
             whileInView={{ opacity: 1 }}
             className="text-brand-violet font-bold text-xs tracking-widest uppercase mb-4"
           >
-<<<<<<< HEAD
+
             Capabilities
-=======
+
             Services
->>>>>>> e3d7982 (changes made)
+
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ export default function Features() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<<<<<<< HEAD
+
           {features.map((feature, i) => (
             <motion.div
               key={i}
@@ -141,7 +141,7 @@ export default function Features() {
               </div>
             </motion.div>
           ))}
-=======
+
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
@@ -172,7 +172,7 @@ export default function Features() {
               </Link>
             );
           })}
->>>>>>> e3d7982 (changes made)
+
         </div>
       </div>
     </section>

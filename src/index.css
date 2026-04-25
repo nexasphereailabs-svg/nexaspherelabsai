@@ -14,10 +14,10 @@
 :root {
   background-color: #f8fafc;
   color: #0f172a;
-<<<<<<< HEAD
-=======
+
+
   scroll-behavior: smooth;
->>>>>>> e3d7982 (changes made)
+
 }
 
 @layer base {
