@@ -15,12 +15,6 @@ import About from "./components/About";
 import HowItWorks from "./components/HowItWorks";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
-
-export default function App() {
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-
 import FeatureDetailPage from "./components/FeatureDetailPage";
 import LearnMorePage from "./components/LearnMorePage";
 
@@ -45,7 +39,6 @@ function ScrollToTop() {
 function HomePage() {
   return (
     <>
-
       <Navbar />
       <main>
         <Hero />
@@ -55,9 +48,6 @@ function HomePage() {
         <Contact />
       </main>
       <Footer />
-
-    </div>
-
     </>
   );
 }
@@ -74,7 +64,6 @@ export default function App() {
         </Routes>
       </div>
     </Router>
-
   );
 }
 

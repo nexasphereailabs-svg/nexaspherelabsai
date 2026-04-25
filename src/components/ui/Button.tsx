@@ -1,22 +1,11 @@
-
-import { motion } from "motion/react";
+import { motion, HTMLMotionProps } from "motion/react";
 import { ReactNode } from "react";
 import { cn } from "@/src/lib/utils";
 
-interface ButtonProps {
+interface ButtonProps extends HTMLMotionProps<"button"> {
   children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
-  className?: string;
-  onClick?: () => void;
-
-import { motion, HTMLMotionProps } from "motion/react";
-import { cn } from "@/src/lib/utils";
-
-interface ButtonProps extends HTMLMotionProps<"button"> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
-
 }
 
 export default function Button({
@@ -24,11 +13,7 @@ export default function Button({
   variant = "primary",
   size = "md",
   className,
-
-  onClick,
-
   ...props
-
 }: ButtonProps) {
   const variants = {
     primary: "gradient-btn shadow-lg shadow-violet-600/20 shimmer",
@@ -45,23 +30,16 @@ export default function Button({
 
   return (
     <motion.button
+      type="button"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-
-        "rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50",
-
         "rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 cursor-pointer",
-
         variants[variant],
         sizes[size],
         className
       )}
-
-      onClick={onClick}
-
       {...props}
-
     >
       {children}
     </motion.button>
