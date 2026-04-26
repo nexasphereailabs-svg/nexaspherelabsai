@@ -141,7 +141,7 @@ export default function LearnMorePage() {
               animate={{ opacity: 1, scale: 1 }}
               className="relative hidden lg:block"
             >
-              <div className="absolute inset-0 bg-linear-to-br from-brand-violet/20 to-brand-cyan/20 blur-[100px] rounded-full" />
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-brand-cyan/20 blur-[100px] rounded-full" />
               <div className="glass p-12 rounded-[3rem] relative z-10 aspect-square flex items-center justify-center">
                  <Cpu className="w-48 h-48 text-brand-violet opacity-20 absolute" />
                  <Globe className="w-32 h-32 text-brand-cyan relative z-10" />
@@ -198,7 +198,7 @@ export default function LearnMorePage() {
                     alt="AI Transformation" 
                     className="w-full h-full object-cover opacity-80"
                    />
-                   <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                 </div>
              </div>
           </div>

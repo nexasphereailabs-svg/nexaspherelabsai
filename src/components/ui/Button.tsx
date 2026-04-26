@@ -1,9 +1,7 @@
 import { motion, HTMLMotionProps } from "motion/react";
-import { ReactNode } from "react";
 import { cn } from "@/src/lib/utils";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-  children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
 }
@@ -30,7 +28,6 @@ export default function Button({
 
   return (
     <motion.button
-      type="button"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
@@ -45,7 +42,4 @@ export default function Button({
     </motion.button>
   );
 }
-
-
-
 

@@ -97,7 +97,7 @@ export default function FeatureDetailPage() {
               className="relative rounded-[40px] overflow-hidden shadow-2xl border border-white/20"
             >
               <img src={feature.image} alt={feature.title} className="w-full aspect-video object-cover" />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
             </motion.div>
           </div>
         );
@@ -111,10 +111,6 @@ export default function FeatureDetailPage() {
             >
               <div className={`absolute -inset-4 ${getIconBg(feature.color)} rounded-[40px] blur-2xl -z-10`} />
               <img src={feature.image} alt={feature.title} className="w-full rounded-[32px] shadow-2xl object-cover aspect-[4/3]" />
-              <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl hidden md:block">
-                <div className={`text-2xl font-bold ${getIconColor(feature.color)}`}>{feature.stats[0]?.value}</div>
-                <div className="text-[10px] uppercase font-bold tracking-widest text-slate-400">{feature.stats[0]?.label}</div>
-              </div>
             </motion.div>
             <div className="order-1 lg:order-2">
               <motion.span 
@@ -139,14 +135,6 @@ export default function FeatureDetailPage() {
               >
                 {feature.heroSubheadline}
               </motion.p>
-              <div className="flex gap-4">
-                {feature.stats.slice(1, 4).map((stat, i) => (
-                  <div key={i} className="glass px-6 py-4 rounded-2xl">
-                    <div className="text-xl font-bold">{stat.value}</div>
-                    <div className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         );
@@ -167,28 +155,11 @@ export default function FeatureDetailPage() {
                 {feature.heroHeadline}
               </motion.h1>
             </div>
-            <div className="grid lg:grid-cols-3 gap-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                className="lg:col-span-2 relative rounded-[48px] overflow-hidden group"
-              >
-                <img src={feature.image} alt={feature.title} className="w-full h-full object-cover min-h-[400px] transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent" />
-                <div className="absolute bottom-10 left-10 text-white max-w-md">
-                   <p className="text-xl font-medium leading-relaxed">{feature.heroSubheadline}</p>
-                </div>
-              </motion.div>
-              <div className="grid grid-cols-1 gap-6">
-                {feature.stats.map((stat, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + (i * 0.1) }}
-                    className="glass p-8 rounded-[32px] flex flex-col justify-center"
-                  >
-                    <div className={`text-3xl font-display font-bold ${getIconColor(feature.color)} mb-2`}>{stat.value}</div>
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
-                  </motion.div>
-                ))}
+            <div className="relative rounded-[48px] overflow-hidden group">
+              <img src={feature.image} alt={feature.title} className="w-full h-full object-cover min-h-[400px] transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+              <div className="absolute bottom-10 left-10 text-white max-w-md">
+                 <p className="text-xl font-medium leading-relaxed">{feature.heroSubheadline}</p>
               </div>
             </div>
           </div>
@@ -218,15 +189,6 @@ export default function FeatureDetailPage() {
               <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
                 {feature.heroSubheadline}
               </p>
- 
-               <div className="grid grid-cols-2 gap-4">
-                {feature.stats.slice(0, 2).map((stat, i) => (
-                  <div key={i} className="glass p-6 rounded-2xl">
-                    <div className="text-2xl font-bold text-slate-900">{stat.value}</div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </motion.div>
  
              <motion.div 
@@ -237,12 +199,6 @@ export default function FeatureDetailPage() {
             >
               <div className={`absolute -inset-4 ${getIconBg(feature.color)} rounded-[48px] blur-3xl -z-10 opacity-30`} />
               <img src={feature.image} alt={feature.title} className="w-full rounded-[40px] shadow-2xl object-cover aspect-square sm:aspect-video lg:aspect-[4/5]" />
-              {feature.stats[2] && (
-                <div className="absolute -bottom-8 -left-8 glass p-8 rounded-3xl hidden md:block max-w-[240px]">
-                  <div className={`text-4xl font-display font-bold ${getIconColor(feature.color)} mb-2`}>{feature.stats[2].value}</div>
-                  <p className="text-xs text-slate-500 font-medium leading-relaxed">{feature.stats[2].label} baseline improvement across enterprise clients.</p>
-                </div>
-              )}
             </motion.div>
           </div>
         );
@@ -313,47 +269,45 @@ export default function FeatureDetailPage() {
             <div className="relative glass p-12 rounded-[48px] border-slate-200">
               <div className="mb-12">
                 <span className="text-xs font-bold text-brand-violet uppercase tracking-widest px-3 py-1 bg-brand-violet/10 rounded-full">
-                  Featured Case Study
+                  Strategic Approach
                 </span>
-                <h2 className="text-3xl font-display font-bold mt-6">
-                  Real Results at {feature.caseStudy.company}
+                <h2 className="text-3xl font-display font-bold mt-6 text-slate-900">
+                  {feature.strategicApproach.title}
                 </h2>
               </div>
 
-              <div className="grid lg:grid-cols-3 gap-12">
-                <div className="lg:col-span-2 space-y-8">
+              <div className="grid lg:grid-cols-2 gap-16">
+                <div className="space-y-8">
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-3">The Problem</h4>
-                    <p className="text-slate-600 leading-relaxed">{feature.caseStudy.problem}</p>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                       <div className="w-1.5 h-1.5 rounded-full bg-brand-violet" />
+                       Context & Problem
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed">{feature.strategicApproach.problemContext}</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-3">The Solution</h4>
-                    <p className="text-slate-600 leading-relaxed">{feature.caseStudy.solution}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-4">Results Architecture</h4>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {feature.caseStudy.results.map((result, i) => (
-                        <div key={i} className="bg-white p-4 rounded-xl border border-slate-100 flex items-center gap-3">
-                          <div className="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center shrink-0">
-                            <span className="text-green-600 text-xs">✓</span>
-                          </div>
-                          <span className="text-sm font-medium text-slate-700">{result}</span>
-                        </div>
-                      ))}
-                    </div>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                       <div className="w-1.5 h-1.5 rounded-full bg-brand-violet" />
+                       Our Methodology
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed">{feature.strategicApproach.methodology}</p>
                   </div>
                 </div>
                 
-                <div className="bg-slate-900 text-white p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-violet/20 blur-3xl" />
-                  <Quote className="w-10 h-10 text-brand-violet mb-8 opacity-50" />
-                  <p className="text-lg italic font-display leading-relaxed relative z-10 mb-8">
-                    "{feature.caseStudy.quote}"
-                  </p>
-                  <div className="relative z-10">
-                    <div className="text-brand-violet font-bold">{feature.caseStudy.author}</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-widest">Verified Client Reflection</div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-6 flex items-center gap-2">
+                     <div className="w-1.5 h-1.5 rounded-full bg-brand-violet" />
+                     Core Principles
+                  </h4>
+                  <div className="grid gap-4">
+                    {feature.strategicApproach.principles.map((principle, i) => (
+                      <div key={i} className="bg-white p-5 rounded-2xl border border-slate-100 flex items-center gap-4 shadow-sm">
+                        <div className="w-10 h-10 bg-brand-violet/5 rounded-full flex items-center justify-center shrink-0">
+                          <CheckCircle2 className="w-5 h-5 text-brand-violet" />
+                        </div>
+                        <span className="font-medium text-slate-700">{principle}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -388,7 +342,7 @@ export default function FeatureDetailPage() {
         {/* CTA Section */}
         <section className="container mx-auto px-6">
           <div className="bg-slate-900 rounded-[48px] p-12 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-linear-to-br from-brand-violet/20 to-transparent opacity-50" />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-transparent opacity-50" />
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
                 Ready to Deploy?

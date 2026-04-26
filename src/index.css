@@ -14,10 +14,7 @@
 :root {
   background-color: #f8fafc;
   color: #0f172a;
-
-
   scroll-behavior: smooth;
-
 }
 
 @layer base {
@@ -39,11 +36,11 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-violet via-brand-blue to-brand-cyan;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-violet via-brand-blue to-brand-cyan;
 }
 
 .gradient-btn {
-  @apply bg-linear-to-r from-violet-600 to-blue-600 text-white;
+  @apply bg-gradient-to-r from-violet-600 to-blue-600 text-white;
 }
 
 @keyframes shimmer {

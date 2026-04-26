@@ -30,7 +30,7 @@ export default function HowItWorks() {
 
         <div className="flex flex-col md:flex-row gap-12 relative">
           {/* Connection Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-slate-200 to-transparent -translate-y-1/2 z-0" />
+          <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent -translate-y-1/2 z-0" />
           
           {steps.map((step, i) => (
             <motion.div
