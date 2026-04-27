@@ -41,15 +41,18 @@ export default function About() {
           >
             <p className="text-brand-violet font-bold text-xs tracking-widest uppercase mb-4">About Nexasphere</p>
             <h2 className="text-5xl md:text-6xl font-extrabold mb-8 leading-[1.1] tracking-tighter text-slate-900">
-              Unlocking the <br />
-              <span className="gradient-text">Future of Intelligence.</span>
+              Transforming Ideas into <br />
+              <span className="gradient-text">Intelligent Solutions.</span>
             </h2>
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
               <p>
-                <strong className="text-slate-900">Nexasphere AI Labs Private Limited</strong> is a forward-thinking technology company dedicated to helping organizations unlock the power of Artificial Intelligence, Data Science, and intelligent automation.
+                <strong className="text-slate-900">Nexasphere AI Labs Private Limited</strong> is an innovative technology company focused on delivering next-generation AI solutions that help organizations accelerate growth and stay competitive.
               </p>
               <p>
-                We prioritize technical excellence and real-world business understanding to deliver measurable outcomes, from modernizing business systems to upskilling the global workforce.
+                We specialize in building AI-enabled websites integrated with advanced RAG-powered chatbots and autonomous agents that transform traditional operations into smart, data-driven ecosystems.
+              </p>
+              <p>
+                In addition, we are committed to building future-ready talent through high-impact training in Generative AI, Data Science, and Machine Learning for corporate and academic institutions.
               </p>
             </div>
             

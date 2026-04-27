@@ -169,10 +169,20 @@ export default function LearnMorePage() {
           <div className="grid lg:grid-cols-2 gap-24 mb-32 items-center">
              <div className="order-2 lg:order-1">
                 <div className="sec-tag blue">Who We Are</div>
-                <h2 className="text-4xl font-bold mb-8">AI Should Create <span className="gradient-text">Real Outcomes</span></h2>
+                <h2 className="text-4xl font-bold mb-8">Empowering Growth through <span className="gradient-text">Practical AI</span></h2>
                 <div className="space-y-6 text-slate-600 leading-relaxed">
-                  <p>Nexasphere AI Labs is dedicated to helping organizations unlock the power of Data Science and intelligent automation.</p>
-                  <p>In addition to technology services, we are passionate about building future-ready talent — delivering high-impact training programs for corporates and universities.</p>
+                  <p>
+                    Nexasphere AI Labs Private Limited is an innovative technology company focused on delivering next-generation Artificial Intelligence solutions that help organizations accelerate growth, improve efficiency, and stay competitive. We specialize in designing and deploying intelligent systems that transform traditional business operations into smart, data-driven ecosystems.
+                  </p>
+                  <p>
+                    Our core expertise lies in building AI-enabled websites and digital platforms integrated with advanced conversational chatbots powered by Retrieval-Augmented Generation (RAG) technology. We also develop autonomous AI Agents for business automation, helping organizations streamline repetitive tasks and optimize workflows.
+                  </p>
+                  <p>
+                    In the field of Machine Learning and Deep Learning, we provide powerful predictive analytics for forecasting, demand planning, and customer behavior analysis. Beyond solutions, we are committed to building future-ready talent through expert-led training programs in GenAI, Data Science, and Python for corporate and academic institutions.
+                  </p>
+                  <p className="font-medium text-slate-900">
+                    At Nexasphere AI Labs, we believe AI should be practical, scalable, and result-oriented. Our mission is to empower businesses with intelligent technologies that create measurable impact and long-term value.
+                  </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
                    {[
@@ -227,6 +237,58 @@ export default function LearnMorePage() {
                      </ul>
                   </div>
                 ))}
+             </div>
+          </div>
+
+          {/* Founding Leadership */}
+          <div className="mb-32">
+             <div className="text-center mb-16">
+                <div className="sec-tag gold">Our Leadership</div>
+                <h2 className="text-4xl font-bold">Guided by <span className="gradient-text">Expertise</span></h2>
+             </div>
+             <div className="glass p-8 md:p-12 rounded-[3rem] relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-violet/5 blur-3xl -z-10" />
+                <div className="grid md:grid-cols-3 gap-12 items-center">
+                   <div className="md:col-span-1">
+                      <div className="aspect-square bg-slate-100 rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-inner">
+                         <img 
+                          src="https://media.licdn.com/dms/image/v2/D4D03AQHM4O1G78X9iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685540852936?e=1778716800&v=beta&t=D2Cv9mBCGBS2RtmsxemXj3XBzf-21YE24vhhWS8jycY" 
+                          alt="Bhavesh Mathur" 
+                          className="w-full h-full object-cover transition-all duration-500"
+                         />
+                      </div>
+                   </div>
+                   <div className="md:col-span-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-3xl font-bold text-slate-900">Bhavesh Mathur</h3>
+                        <a 
+                          href="https://www.linkedin.com/in/bhavesh-mathur-879360168/" 
+                          target="_blank" 
+                          rel="noreferrer"
+                          className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+                        >
+                          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                      </div>
+                      <div className="text-brand-violet font-bold text-sm uppercase tracking-widest mb-6">Founder & Lead Architect</div>
+                      <p className="text-slate-600 leading-relaxed mb-8 text-lg">
+                        Bhavesh is an AI Consultant & Trainer with a deep commitment to bridge the gap between theoretical AI research and production-grade implementation. Under his leadership, Nexasphere specializes in high-impact AI transformation and workforce upskilling.
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                         {[
+                           "Microsoft Certified: Azure AI Engineer Associate (AI 102)",
+                           "Generative AI",
+                           "Agentic AI",
+                           "Machine Learning",
+                           "Deep Learning"
+                         ].map(skill => (
+                           <span key={skill} className="px-4 py-2 bg-white border border-slate-100 rounded-full text-xs font-medium text-slate-600 shadow-sm">
+                             {skill}
+                           </span>
+                         ))}
+                      </div>
+                   </div>
+                </div>
              </div>
           </div>
 
@@ -319,7 +381,7 @@ export default function LearnMorePage() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-violet/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 relative z-10 leading-tight text-slate-900">Start Your AI Transformation</h2>
             <p className="text-slate-600 mb-12 max-w-xl mx-auto relative z-10 text-lg">
-              Join over 100 leaders leverage NexasphereAI for smarter operations. Book a free opportunity assessment today.
+              Join over 100 leaders leverage Nexasphere AI Labs for smarter operations. Book a free opportunity assessment today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
               <Link to="/#contact-form">

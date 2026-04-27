@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FeatureDetailPage from "./components/FeatureDetailPage";
 import LearnMorePage from "./components/LearnMorePage";
+import { Chatbot } from "./components/Chatbot";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -59,6 +60,7 @@ export default function App() {
           <Route path="/features/:slug" element={<FeatureDetailPage />} />
           <Route path="/learn-more" element={<LearnMorePage />} />
         </Routes>
+        <Chatbot />
       </div>
     </Router>
   );

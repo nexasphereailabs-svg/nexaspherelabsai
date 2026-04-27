@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] text-slate-500 uppercase tracking-widest font-bold">
           <div className="flex items-center gap-3">
-            <img src="https://files.catbox.moe/n96mwl.png" alt="NexasphereAI Logo" className="w-8 h-8 object-contain" />
-            <span className="text-slate-900">© 2026 Nexasphere AI Labs Inc.</span>
+            <img src="https://files.catbox.moe/n96mwl.png" alt="Nexasphere AI Labs Logo" className="w-8 h-8 object-contain" />
+            <span className="text-slate-900">© 2026 Nexasphere AI Labs Private Ltd.</span>
           </div>
 
           <div className="flex gap-4">
