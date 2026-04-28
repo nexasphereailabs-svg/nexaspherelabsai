@@ -32,6 +32,7 @@ import Button from "./ui/Button";
 
 export default function LearnMorePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const stats = [
     { label: "Core AI Services", value: "9" },
@@ -139,18 +140,34 @@ export default function LearnMorePage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="relative hidden lg:block"
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative mt-8 lg:mt-0"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-brand-cyan/20 blur-[100px] rounded-full" />
-              <div className="glass p-12 rounded-[3rem] relative z-10 aspect-square flex items-center justify-center">
-                 <Cpu className="w-48 h-48 text-brand-violet opacity-20 absolute" />
-                 <Globe className="w-32 h-32 text-brand-cyan relative z-10" />
-                 <div className="absolute top-1/4 right-1/4 w-12 h-12 bg-white rounded-2xl shadow-xl flex items-center justify-center animate-bounce">
-                    <Shield className="w-6 h-6 text-brand-blue" />
-                 </div>
-                 <div className="absolute bottom-1/4 left-1/4 w-12 h-12 bg-white rounded-2xl shadow-xl flex items-center justify-center animate-pulse">
-                    <Zap className="w-6 h-6 text-brand-cyan" />
-                 </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-brand-cyan/20 blur-[60px] lg:blur-[100px] rounded-full" />
+              <div className="relative z-10 glass rounded-[2rem] lg:rounded-[2.5rem] p-2 lg:p-3 overflow-hidden shadow-2xl mx-auto max-w-2xl lg:max-w-none">
+                <div className="relative overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] bg-slate-900 aspect-video lg:aspect-auto min-h-[200px]">
+                  {/* Video Loading Visual */}
+                  {!isVideoLoaded && (
+                    <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+                      <div className="flex flex-col items-center gap-4">
+                        <div className="w-10 h-10 rounded-full border-2 border-brand-violet/20 border-t-brand-violet animate-spin" />
+                        <span className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Loading</span>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <video 
+                    src="https://files.catbox.moe/ejaup8.mp4" 
+                    poster="https://files.catbox.moe/iqgdtg.png"
+                    autoPlay 
+                    controls
+                    playsInline 
+                    onLoadedData={() => setIsVideoLoaded(true)}
+                    className={`w-full h-full lg:h-auto block relative z-0 object-cover lg:object-contain transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  />
+                  <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -329,7 +346,7 @@ export default function LearnMorePage() {
                 <div className="space-y-12">
                    {process.map((step, idx) => (
                      <div key={idx} className="flex gap-8 md:gap-12 pb-12 border-b border-slate-100 last:border-0 relative">
-                        <div className="text-5xl font-display font-bold text-slate-200 shrink-0 leading-none">{step.num}</div>
+                        <div className="text-5xl font-display font-bold text-slate-400 shrink-0 leading-none">{step.num}</div>
                         <div className="flex-1">
                           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                             <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>

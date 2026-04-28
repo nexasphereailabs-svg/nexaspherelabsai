@@ -16,7 +16,17 @@ const CHAT_RULES: Record<string, { text: string; options?: { text: string; actio
       { text: "AI Services & Solutions", action: "services_hub" },
       { text: "Technical Training", action: "technical-training" },
       { text: "About Founder", action: "founder" },
+      { text: "Follow Us", action: "socials" },
       { text: "Contact Us", action: "contact" }
+    ]
+  },
+  socials: {
+    text: "Connect with us on our official social media channels for the latest AI insights and updates:",
+    options: [
+      { text: "X (Twitter)", action: "go_x" },
+      { text: "Instagram", action: "go_insta" },
+      { text: "LinkedIn", action: "go_linkedin_page" },
+      { text: "Back to Main", action: "start" }
     ]
   },
   services_hub: {
@@ -146,6 +156,21 @@ export const Chatbot = () => {
   };
 
   const handleOptionClick = (option: { text: string; action: string }) => {
+    if (option.action === 'go_x') {
+      window.open('https://x.com/nexasphereai', '_blank');
+      return;
+    }
+
+    if (option.action === 'go_insta') {
+      window.open('https://www.instagram.com/nexasphereailabs/', '_blank');
+      return;
+    }
+
+    if (option.action === 'go_linkedin_page') {
+      window.open('https://www.linkedin.com/in/nexasphere-ai-labs-59b719406/', '_blank');
+      return;
+    }
+
     if (option.action === 'go_contact') {
       window.location.href = '/#contact-form';
       setIsOpen(false);
