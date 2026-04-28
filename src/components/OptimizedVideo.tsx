@@ -11,13 +11,16 @@ interface OptimizedVideoProps {
   onLoaded?: () => void;
 }
 
+// Access Google App Script URL from environment variables
+const googleAppScriptUrl = import.meta.env.VITE_GOOGLE_APP_SCRIPT_URL;
+
 export default function OptimizedVideo({
   src,
   poster,
   className,
   autoPlay = true,
-  loop = true,
-  muted = true,
+  loop = false,
+  muted = false,
   controls = false,
   onLoaded
 }: OptimizedVideoProps) {
@@ -35,7 +38,7 @@ export default function OptimizedVideo({
       
       if (isSlow) {
         console.log("Slow network detected: optimizing video delivery.");
-        setShouldAutoPlay(false); // Disable autoplay to save data
+        // setShouldAutoPlay(false); // Disable autoplay to save data
         setPreloadStrategy("metadata"); // Only load metadata
       } else {
         setShouldAutoPlay(autoPlay);

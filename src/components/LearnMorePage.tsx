@@ -147,7 +147,7 @@ export default function LearnMorePage() {
               <div className="relative z-10 glass rounded-[1.8rem] lg:rounded-[2.5rem] p-1.5 lg:p-3 overflow-hidden shadow-2xl mx-auto max-w-2xl lg:max-w-none">
                 <div className="relative overflow-hidden rounded-[1.4rem] lg:rounded-[2rem] bg-slate-900 aspect-video lg:aspect-auto min-h-[180px] md:min-h-[250px] flex items-center justify-center">
                   <OptimizedVideo 
-                    src="https://files.catbox.moe/ejaup8.mp4" 
+                    src="https://files.catbox.moe/fb2lq0.mp4" 
                     poster="https://files.catbox.moe/iqgdtg.png"
                     controls
                     autoPlay={true}
