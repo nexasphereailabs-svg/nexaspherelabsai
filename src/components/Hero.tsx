@@ -56,7 +56,7 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-[30px] bg-slate-900 min-h-[180px] sm:min-h-[300px] flex items-center justify-center">
               <OptimizedVideo 
                 src="https://files.catbox.moe/g752jk.mp4" 
-                poster="https://files.catbox.moe/iqgdtg.png"
+                poster="https://files.catbox.moe/fkg7r0.png"
                 className="w-full max-h-full block relative z-0"
                 autoPlay={true}
                 loop={true}
