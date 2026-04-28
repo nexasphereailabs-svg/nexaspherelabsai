@@ -53,16 +53,7 @@ export default function OptimizedVideo({
   };
 
   return (
-    <div className="relative w-full h-full bg-slate-900 group flex items-center justify-center overflow-hidden">
-      {/* Immediate Poster Layer - always visible until video is ready */}
-      {poster && !isVideoLoaded && (
-        <img 
-          src={poster} 
-          alt="" 
-          className={`${className} absolute inset-0 w-full h-full object-cover z-0 border-none outline-none`}
-        />
-      )}
-
+    <div className="relative w-full h-full bg-slate-900 group flex items-center justify-center">
       {/* Loading Visual */}
       {showLoading && !isVideoLoaded && (
         <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900">
@@ -85,7 +76,7 @@ export default function OptimizedVideo({
         playsInline
         preload={preloadStrategy}
         onLoadedData={handleLoadedData}
-        className={`${className} relative z-10 transition-opacity duration-700 ${(isVideoLoaded || !showLoading) ? 'opacity-100' : 'opacity-0'}`}
+        className={`${className} transition-opacity duration-1000 ${(isVideoLoaded || !showLoading) ? 'opacity-100' : 'opacity-0'}`}
       />
       
       {/* Play overlay for slow networks where autoplay is disabled */}
