@@ -53,10 +53,11 @@ export default function Hero() {
         >
           <div className="relative z-10 glass rounded-[40px] p-3 overflow-hidden group shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-violet/20 to-brand-cyan/20 opacity-30 group-hover:opacity-50 transition-opacity z-10 pointer-events-none" />
-            <div className="relative overflow-hidden rounded-[30px] bg-slate-900 min-h-[300px]">
+            <div className="relative overflow-hidden rounded-[30px] bg-slate-900 min-h-[180px] sm:min-h-[300px] flex items-center justify-center">
               <OptimizedVideo 
                 src="https://files.catbox.moe/g752jk.mp4" 
-                className="w-full h-auto block relative z-0"
+                poster="https://files.catbox.moe/iqgdtg.png"
+                className="w-full max-h-full block relative z-0"
               />
               <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
             </div>

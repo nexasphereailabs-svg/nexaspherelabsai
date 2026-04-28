@@ -144,15 +144,15 @@ export default function LearnMorePage() {
               className="relative mt-8 lg:mt-0"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-brand-cyan/20 blur-[60px] lg:blur-[100px] rounded-full" />
-              <div className="relative z-10 glass rounded-[2rem] lg:rounded-[2.5rem] p-2 lg:p-3 overflow-hidden shadow-2xl mx-auto max-w-2xl lg:max-w-none">
-                <div className="relative overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] bg-slate-900 aspect-video lg:aspect-auto min-h-[200px]">
+              <div className="relative z-10 glass rounded-[1.8rem] lg:rounded-[2.5rem] p-1.5 lg:p-3 overflow-hidden shadow-2xl mx-auto max-w-2xl lg:max-w-none">
+                <div className="relative overflow-hidden rounded-[1.4rem] lg:rounded-[2rem] bg-slate-900 aspect-video lg:aspect-auto min-h-[180px] md:min-h-[250px] flex items-center justify-center">
                   <OptimizedVideo 
                     src="https://files.catbox.moe/ejaup8.mp4" 
                     poster="https://files.catbox.moe/iqgdtg.png"
                     controls
                     autoPlay={true}
                     loop={false}
-                    className="w-full h-full lg:h-auto block relative z-0 object-cover lg:object-contain"
+                    className="w-full max-h-full block relative z-0 object-contain"
                   />
                   <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
                 </div>

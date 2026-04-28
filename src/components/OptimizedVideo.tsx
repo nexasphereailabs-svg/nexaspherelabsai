@@ -1,11 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-interface VideoSource {
-  src: string;
-  type?: string;
-  quality?: "low" | "medium" | "high";
-}
-
 interface OptimizedVideoProps {
   src: string;
   poster?: string;
@@ -15,8 +9,6 @@ interface OptimizedVideoProps {
   muted?: boolean;
   controls?: boolean;
   onLoaded?: () => void;
-  lowQualitySrc?: string;
-  sources?: VideoSource[];
 }
 
 export default function OptimizedVideo({
@@ -27,83 +19,39 @@ export default function OptimizedVideo({
   loop = true,
   muted = true,
   controls = false,
-  onLoaded,
-  lowQualitySrc,
-  sources,
+  onLoaded
 }: OptimizedVideoProps) {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [shouldAutoPlay, setShouldAutoPlay] = useState(autoPlay);
   const [preloadStrategy, setPreloadStrategy] = useState<"auto" | "metadata" | "none">("auto");
-  const [isInView, setIsInView] = useState(false);
-  const [useLowQuality, setUseLowQuality] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check network connection speed if available
     const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
-    const isSlow = connection
-      ? connection.saveData || (connection.effectiveType && ['slow-2g', '2g', '3g'].includes(connection.effectiveType))
-      : false;
-
-    if (isSlow) {
-      console.log("Slow network detected: optimizing video delivery.");
-      setShouldAutoPlay(false);
-      setPreloadStrategy("metadata");
-      setUseLowQuality(Boolean(lowQualitySrc));
-    } else {
-      setShouldAutoPlay(autoPlay);
-      setPreloadStrategy("auto");
-      setUseLowQuality(false);
+    
+    if (connection) {
+      const isSlow = connection.saveData || (connection.effectiveType && ['slow-2g', '2g', '3g'].includes(connection.effectiveType));
+      
+      if (isSlow) {
+        console.log("Slow network detected: optimizing video delivery.");
+        setShouldAutoPlay(false); // Disable autoplay to save data
+        setPreloadStrategy("metadata"); // Only load metadata
+      } else {
+        setShouldAutoPlay(autoPlay);
+        setPreloadStrategy("auto");
+      }
     }
-  }, [autoPlay, lowQualitySrc]);
-
-  useEffect(() => {
-    if (!containerRef.current || !('IntersectionObserver' in window)) {
-      setIsInView(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (isInView) {
-      videoRef.current?.load();
-    }
-  }, [isInView, useLowQuality, src, lowQualitySrc, sources]);
+  }, [autoPlay]);
 
   const handleLoadedData = () => {
     setIsVideoLoaded(true);
     if (onLoaded) onLoaded();
   };
 
-  const sourceList = sources && sources.length > 0 ? sources : undefined;
-  const filteredSources = sourceList
-    ? sourceList.filter((source) => {
-        if (useLowQuality) {
-          return source.quality === "low" || !source.quality;
-        }
-        return source.quality !== "low";
-      })
-    : undefined;
-  const effectiveSources = filteredSources && filteredSources.length > 0 ? filteredSources : sourceList;
-  const primarySource = useLowQuality && lowQualitySrc ? lowQualitySrc : src;
-
   return (
-    <div ref={containerRef} className="relative w-full h-full bg-slate-900 group">
+    <div className="relative w-full h-full bg-slate-900 group flex items-center justify-center">
+      {/* Loading Visual */}
       {!isVideoLoaded && (
         <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
@@ -116,29 +64,26 @@ export default function OptimizedVideo({
 
       <video
         ref={videoRef}
+        src={src}
         poster={poster}
-        autoPlay={shouldAutoPlay && isInView}
+        autoPlay={shouldAutoPlay}
         loop={loop}
         muted={muted}
         controls={controls}
         playsInline
-        preload={isInView ? preloadStrategy : "none"}
+        preload={preloadStrategy}
         onLoadedData={handleLoadedData}
         className={`${className} transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
-      >
-        {isInView && effectiveSources?.map((source) => (
-          <source key={source.src} src={source.src} type={source.type ?? 'video/mp4'} />
-        ))}
-        {isInView && !effectiveSources && <source src={primarySource} type="video/mp4" />}
-      </video>
-
+      />
+      
+      {/* Play overlay for slow networks where autoplay is disabled */}
       {!shouldAutoPlay && !isVideoLoaded && !controls && (
-        <div
+        <div 
           className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-black/20"
           onClick={() => videoRef.current?.play()}
         >
           <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 hover:scale-110 transition-transform">
-            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           </div>
         </div>
       )}
