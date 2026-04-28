@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import AdaptiveVideo from "./AdaptiveVideo";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Button from "./ui/Button";
@@ -157,12 +158,15 @@ export default function LearnMorePage() {
                     </div>
                   )}
                   
-                  <video 
-                    src="https://files.catbox.moe/ejaup8.mp4" 
+                  <AdaptiveVideo
+                    sources={[
+                      { quality: "low", src: "https://files.catbox.moe/ejaup8.mp4" },
+                      { quality: "medium", src: "https://files.catbox.moe/ejaup8.mp4" },
+                      { quality: "high", src: "https://files.catbox.moe/ejaup8.mp4" }
+                    ]}
                     poster="https://files.catbox.moe/iqgdtg.png"
-                    autoPlay 
+                    autoPlay
                     controls
-                    playsInline 
                     onLoadedData={() => setIsVideoLoaded(true)}
                     className={`w-full h-full lg:h-auto block relative z-0 object-cover lg:object-contain transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
                   />

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { ChevronRight, Play } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import AdaptiveVideo from "./AdaptiveVideo";
 import Button from "./ui/Button";
 
 export default function Hero() {
@@ -67,13 +68,15 @@ export default function Hero() {
                 </div>
               )}
               
-              <video 
-                src="https://files.catbox.moe/g752jk.mp4" 
+              <AdaptiveVideo
+                sources={[
+                  { quality: "low", src: "https://files.catbox.moe/g752jk.mp4" },
+                  { quality: "medium", src: "https://files.catbox.moe/g752jk.mp4" },
+                  { quality: "high", src: "https://files.catbox.moe/g752jk.mp4" }
+                ]}
                 poster="https://files.catbox.moe/iqgdtg.png"
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
+                autoPlay
+                loop
                 onLoadedData={() => setIsVideoLoaded(true)}
                 className={`w-full h-auto block relative z-0 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
