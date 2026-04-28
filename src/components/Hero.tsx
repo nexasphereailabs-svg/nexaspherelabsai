@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { motion } from "motion/react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdaptiveVideo from "./AdaptiveVideo";
 import Button from "./ui/Button";
+import OptimizedVideo from "./OptimizedVideo";
 
 export default function Hero() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Orbs */}
@@ -57,28 +54,9 @@ export default function Hero() {
           <div className="relative z-10 glass rounded-[40px] p-3 overflow-hidden group shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-violet/20 to-brand-cyan/20 opacity-30 group-hover:opacity-50 transition-opacity z-10 pointer-events-none" />
             <div className="relative overflow-hidden rounded-[30px] bg-slate-900 min-h-[300px]">
-              {/* Video Loading Visual */}
-              {!isVideoLoaded && (
-                <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border-2 border-brand-violet/20 border-t-brand-violet animate-spin" />
-                    <span className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Loading</span>
-                  </div>
-                </div>
-              )}
-              
-              <AdaptiveVideo
-                sources={[
-                  { quality: "low", src: "https://files.catbox.moe/g752jk.mp4" },
-                  { quality: "medium", src: "https://files.catbox.moe/g752jk.mp4" },
-                  { quality: "high", src: "https://files.catbox.moe/g752jk.mp4" }
-                ]}
-                poster="https://files.catbox.moe/iqgdtg.png"
-                autoPlay
-                loop
-                onLoadedData={() => setIsVideoLoaded(true)}
-                className={`w-full h-auto block relative z-0 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+              <OptimizedVideo 
+                src="https://files.catbox.moe/g752jk.mp4" 
+                className="w-full h-auto block relative z-0"
               />
               <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
             </div>

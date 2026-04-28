@@ -26,14 +26,13 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import AdaptiveVideo from "./AdaptiveVideo";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Button from "./ui/Button";
+import OptimizedVideo from "./OptimizedVideo";
 
 export default function LearnMorePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const stats = [
     { label: "Core AI Services", value: "9" },
@@ -147,28 +146,13 @@ export default function LearnMorePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-brand-cyan/20 blur-[60px] lg:blur-[100px] rounded-full" />
               <div className="relative z-10 glass rounded-[2rem] lg:rounded-[2.5rem] p-2 lg:p-3 overflow-hidden shadow-2xl mx-auto max-w-2xl lg:max-w-none">
                 <div className="relative overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] bg-slate-900 aspect-video lg:aspect-auto min-h-[200px]">
-                  {/* Video Loading Visual */}
-                  {!isVideoLoaded && (
-                    <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                      <div className="flex flex-col items-center gap-4">
-                        <div className="w-10 h-10 rounded-full border-2 border-brand-violet/20 border-t-brand-violet animate-spin" />
-                        <span className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">Loading</span>
-                      </div>
-                    </div>
-                  )}
-                  
-                  <AdaptiveVideo
-                    sources={[
-                      { quality: "low", src: "https://files.catbox.moe/ejaup8.mp4" },
-                      { quality: "medium", src: "https://files.catbox.moe/ejaup8.mp4" },
-                      { quality: "high", src: "https://files.catbox.moe/ejaup8.mp4" }
-                    ]}
+                  <OptimizedVideo 
+                    src="https://files.catbox.moe/ejaup8.mp4" 
                     poster="https://files.catbox.moe/iqgdtg.png"
-                    autoPlay
                     controls
-                    onLoadedData={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full lg:h-auto block relative z-0 object-cover lg:object-contain transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    autoPlay={true}
+                    loop={false}
+                    className="w-full h-full lg:h-auto block relative z-0 object-cover lg:object-contain"
                   />
                   <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
                 </div>
