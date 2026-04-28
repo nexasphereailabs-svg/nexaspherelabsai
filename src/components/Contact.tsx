@@ -3,7 +3,8 @@ import { Mail, MessageSquare, MapPin, Send, Loader2, CheckCircle2 } from "lucide
 import React, { useState } from "react";
 import Button from "./ui/Button";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJgCDEbGk4k8Bow8c-RgaUg-KusD2DqtOlREi72G6UAqjc_oC_cHpvN8TJ4jInfbww/exec";
+
+const SCRIPT_URL = import.meta.env.VITE_GOOGLE_APP_SCRIPT_URL;
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
