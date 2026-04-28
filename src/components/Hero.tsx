@@ -61,6 +61,7 @@ export default function Hero() {
                 autoPlay={true}
                 loop={true}
                 muted={true}
+                showLoading={false}
               />
               <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
             </div>

@@ -3,7 +3,6 @@ import { Mail, MessageSquare, MapPin, Send, Loader2, CheckCircle2 } from "lucide
 import React, { useState } from "react";
 import Button from "./ui/Button";
 
-
 const SCRIPT_URL = import.meta.env.VITE_GOOGLE_APP_SCRIPT_URL;
 
 export default function Contact() {

@@ -8,6 +8,7 @@ interface OptimizedVideoProps {
   loop?: boolean;
   muted?: boolean;
   controls?: boolean;
+  showLoading?: boolean;
   onLoaded?: () => void;
 }
 
@@ -20,6 +21,7 @@ export default function OptimizedVideo({
   loop = false,
   muted = false,
   controls = false,
+  showLoading = true,
   onLoaded
 }: OptimizedVideoProps) {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -51,9 +53,18 @@ export default function OptimizedVideo({
   };
 
   return (
-    <div className="relative w-full h-full bg-slate-900 group flex items-center justify-center">
+    <div className="relative w-full h-full bg-slate-900 group flex items-center justify-center overflow-hidden">
+      {/* Immediate Poster Layer - always visible until video is ready */}
+      {poster && !isVideoLoaded && (
+        <img 
+          src={poster} 
+          alt="" 
+          className={`${className} absolute inset-0 w-full h-full object-cover z-0 border-none outline-none`}
+        />
+      )}
+
       {/* Loading Visual */}
-      {!isVideoLoaded && (
+      {showLoading && !isVideoLoaded && (
         <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
           <div className="flex flex-col items-center gap-4">
@@ -74,7 +85,7 @@ export default function OptimizedVideo({
         playsInline
         preload={preloadStrategy}
         onLoadedData={handleLoadedData}
-        className={`${className} transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`${className} relative z-10 transition-opacity duration-700 ${(isVideoLoaded || !showLoading) ? 'opacity-100' : 'opacity-0'}`}
       />
       
       {/* Play overlay for slow networks where autoplay is disabled */}
