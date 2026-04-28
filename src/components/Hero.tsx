@@ -59,6 +59,7 @@ export default function Hero() {
                 poster="https://files.catbox.moe/iqgdtg.png"
                 className="w-full max-h-full block relative z-0"
                 autoPlay={true}
+                loop={true}
                 muted={true}
               />
               <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay z-10 pointer-events-none" />
