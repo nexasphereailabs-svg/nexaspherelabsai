@@ -73,7 +73,7 @@ export default function Contact() {
                   <MessageSquare className="w-6 h-6 text-brand-cyan" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-1 text-slate-900">Phone Number</h4>
+                  <h4 className="font-bold text-lg mb-1 text-slate-900">Whatsapp/Phone Number</h4>
                   <p className="text-slate-600">+91 9990698599</p>
                 </div>
               </div>
@@ -83,8 +83,8 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-brand-blue" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-1 text-slate-900">Global HQ</h4>
-                  <p className="text-slate-600">1006/Tower-6, Royal Court, Nemrana ,Rajasthan</p>
+                  <h4 className="font-bold text-lg mb-1 text-slate-900">Nexasphere AI Labs</h4>
+                  <p className="text-slate-600">1006/Tower-6, Royal Court, Neemrana, Rajasthan</p>
                 </div>
               </div>
             </div>
