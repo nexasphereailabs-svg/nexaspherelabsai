@@ -55,8 +55,8 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-violet/20 to-brand-cyan/20 opacity-30 group-hover:opacity-50 transition-opacity z-10 pointer-events-none" />
             <div className="relative overflow-hidden rounded-[30px] bg-slate-900 min-h-[180px] sm:min-h-[300px] flex items-center justify-center">
               <OptimizedVideo 
-                src="https://files.catbox.moe/g752jk.mp4" 
-                poster="https://files.catbox.moe/fkg7r0.png"
+                src="https://trpzsatfjbludokxelfh.supabase.co/storage/v1/object/public/LOGO/a494ef3f-9fdf-4d87-be2c-3b88fc7806f4_0.mp4" 
+                poster="https://trpzsatfjbludokxelfh.supabase.co/storage/v1/object/public/LOGO/cover_page.png"
                 className="w-full max-h-full block relative z-0"
                 autoPlay={true}
                 loop={true}

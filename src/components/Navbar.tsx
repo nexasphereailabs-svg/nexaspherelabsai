@@ -79,7 +79,7 @@ export default function Navbar() {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setActiveSection("home")}
           >
-            <img src="https://files.catbox.moe/n96mwl.png" alt="Nexasphere AI Labs Logo" className="w-8 h-8 object-contain" />
+            <img src="https://trpzsatfjbludokxelfh.supabase.co/storage/v1/object/public/LOGO/WhatsApp_Image_2026-04-25_at_23.22.39-removebg-preview.png" alt="Nexasphere AI Labs Logo" className="w-8 h-8 object-contain" />
             <span className="text-xl font-display font-bold tracking-tight text-slate-900">
               Nexasphere <span className="text-brand-violet">AI Labs</span>
             </span>
